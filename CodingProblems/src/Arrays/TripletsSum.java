@@ -7,13 +7,17 @@ public class TripletsSum {
     }
     public static boolean tripletSum(int[] A,int n,int X){
         for(int i=0;i<n;i++){
-            for(int j=i+1;j<n;j++){
-                for(int k=j+1;k<n;k++){
-                    if(A[i]+A[j]+A[k]==X){
-                        return true;
-                    }
-                }
-            }
+           int j=i+1;
+           int k=n-1;
+           while(j<k){
+               int sum=A[i]+A[j]+A[k];
+               if(sum==X)return true;
+               if(sum<X){
+                   j++;
+               }else{
+                   k--;
+               }
+           }
         }
         return false;
     }
