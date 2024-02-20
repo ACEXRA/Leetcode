@@ -12,11 +12,11 @@ public class TrappingWater {
         int rightMax=0;
         int ans=0;
         while(start<=end){
-            if(arr[start]<=arr[end]) {
-                if (arr[start] >= leftMax) {
-                    leftMax = arr[start];
-                } else {
-                    ans = ans + leftMax - arr[start];
+            if(arr[start]<=arr[end]){
+                if(arr[start]>=leftMax){
+                    leftMax=arr[start];
+                }else{
+                    ans=ans+leftMax-arr[start];
                 }
                 start++;
             }else{
